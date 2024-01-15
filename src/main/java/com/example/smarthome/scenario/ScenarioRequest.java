@@ -1,7 +1,10 @@
 package com.example.smarthome.scenario;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotEmpty;
 
 public record ScenarioRequest(
-        @JsonProperty("name") String name) {
+        @NotEmpty(message = "Name should not be empty")
+        @JsonProperty("name")
+        String name) {
 }

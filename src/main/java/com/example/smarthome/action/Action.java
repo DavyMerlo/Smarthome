@@ -2,7 +2,7 @@ package com.example.smarthome.action;
 
 import com.example.smarthome.device.Device;
 import com.example.smarthome.devicestate.DeviceState;
-import com.example.smarthome.scenario.Scenario;
+import com.example.smarthome.scenario.entity.Scenario;
 import com.example.smarthome.shared.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;

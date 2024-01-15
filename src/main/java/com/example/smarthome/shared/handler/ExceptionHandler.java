@@ -1,6 +1,9 @@
 package com.example.smarthome.shared.handler;
 
 import ch.qos.logback.core.spi.ErrorCodes;
+import com.example.smarthome.shared.exceptionresponse.ApiErrorResponse;
+import com.example.smarthome.shared.exceptionresponse.ValidationErrorResponse;
+import com.example.smarthome.shared.validators.RequestNotValidException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
@@ -31,5 +34,17 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
                 .timestamp(LocalDateTime.now())
                 .build();
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @org.springframework.web.bind.annotation.ExceptionHandler(RequestNotValidException.class)
+    public ResponseEntity<?> handleException(RequestNotValidException exception){
+
+        var response = ValidationErrorResponse.builder()
+                .validationErrors(exception.getValidationErrors())
+                .isSuccessful(false)
+                .status((short) HttpStatus.BAD_REQUEST.value())
+                .build();
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

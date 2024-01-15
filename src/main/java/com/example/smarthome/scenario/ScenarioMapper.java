@@ -1,5 +1,6 @@
 package com.example.smarthome.scenario;
 
+import com.example.smarthome.scenario.entity.Scenario;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;

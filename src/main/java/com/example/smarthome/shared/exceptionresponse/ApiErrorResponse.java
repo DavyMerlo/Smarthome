@@ -1,4 +1,4 @@
-package com.example.smarthome.shared.handler;
+package com.example.smarthome.shared.exceptionresponse;
 
 import lombok.Builder;
 import lombok.Data;

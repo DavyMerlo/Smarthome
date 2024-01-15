@@ -1,4 +1,4 @@
-package com.example.smarthome.scenario;
+package com.example.smarthome.scenario.entity;
 
 import com.example.smarthome.action.Action;
 import com.example.smarthome.shared.BaseEntity;

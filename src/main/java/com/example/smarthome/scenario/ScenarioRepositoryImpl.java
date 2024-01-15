@@ -1,5 +1,6 @@
 package com.example.smarthome.scenario;
 
+import com.example.smarthome.scenario.entity.Scenario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
